@@ -1,0 +1,46 @@
+<header>
+  <div class="header_div">
+    <div class="navbar_home">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{{base_url_absolute}}" title="Home">
+          <div class="navimg">
+            <img src="{{ url('theme://images/BKF_logo.png') }}" class="initialized" alt="BKF Spalatorie auto">
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-md-none d-lg-block" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link {% if (page.title == "Home")%} active {% endif %}" href="/" title="Home">Prima pagină</a>
+            <div class="dropdown nav-item nav-link">
+              <a class="nav_item_drop {% if (page.title == "Produse")%} active {% endif %}" href="produse" title="Produse">Produse</a>
+              <i class="fa fa-caret-down"></i>
+              <div class="dropdown-content">
+                <a href="produse#category_0" class="js_nav_scroll" title="Spalatorii auto self-service">Spălătorii auto self service</a>
+                <a href="produse#category_1" class="js_nav_scroll" title="Aspiratoare">Aspiratoare</a>
+                <a href="produse#category_2" class="js_nav_scroll" title="Structuri metalice">Structuri metalice</a>
+                <a href="produse#category_3" class="js_nav_scroll" title="Accesori">Accesorii</a>
+              </div>
+            </div> 
+            <a class="nav-item nav-link {% if (page.title == "Technologii")%} active {% endif %}" href="technologii" title="Tehnologie">Tehnologie</a>
+            <a class="nav-item nav-link {% if (page.title == "Investitor")%} active {% endif %}" href="investitor" title="Investitor">Investitor</a>
+            <a class="nav-item nav-link {% if (page.title == "Contact")%} active {% endif %}" href="contact" title="Contact">Contact</a>
+          </div>
+        </div>
+        <div class="open-side-nav d-xs-block d-sm-block d-md-block d-lg-none">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="sidenav">
+    <a href="home" title="Home">Prima pagină</a>
+    <a href="produse" title="Produse">Produse</a>
+    <a href="technologii" title="Tehnologii">Tehnologie</a>
+    <a href="investitor" title="Investitor">Investitor</a>
+    <a href="contact" title="Contact">Contact</a>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="relative">
+  <div class="page-content">
+    <section class="section_content contact">
+    	<div class="row">
+	    	<div class="col-6">
+          {% include "forms/form.html.twig" with { form: forms('contact-form') } %}
+		    </div>
+		    <div class="col-6">
+		      <div id="map">
+          </div>
+		    </div>
+	    </div>
+    </section>
+  </div>
+  
+</div>
+  
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-zZXJcRq9YCy4vMZCbWT8FR0NzB8oVJ8&callback=initMap"
+  async defer></script>
+{% endblock %}
+

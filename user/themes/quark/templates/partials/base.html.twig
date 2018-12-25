@@ -1,0 +1,108 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head><meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+{% block head %}
+    
+    <title>Self-service BKF Carwash</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|PT+Sans|Titillium+Web:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/Icons/logo_BKF.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://css/aos.css', 97) %}
+        {% do assets.addCss('theme://css/input-style.css', 97) %}
+        {% do assets.addCss('theme://css/slick.css', 97) %}
+        {% do assets.addCss('theme://css/bootstrap.min.css', 97) %}
+        {% do assets.addCss('theme://css/main.css', 97) %}
+        {% do assets.addCss('theme://css/progresscircle.css') %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+        {% do assets.addJs('theme://js/aos.js') %}
+        {% do assets.addJs('theme://js/classie.js') %}
+        {% do assets.addJs('theme://js/slick.min.js') %}
+        {% do assets.addJs('theme://js/progresscircle.js') %}
+        {% do assets.addJs('theme://scripts/all.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+{% block header %}
+  {% block header_navigation %}
+  <nav class="main-nav">
+      {% include 'partials/navigation.html.twig' %}
+  </nav>
+  {% endblock %}
+{% endblock %}
+
+{% block body %}
+    <section id="body">
+        <div class="wrapper">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+   <footer class="footer">
+  <div class="footer_container">
+    <div class="footer_internal_container">
+      
+      <div class="footer_img">
+        <img src="{{ url('theme://images/BKF_logo.png') }}" class="initialized" alt="_BKF header-logo">
+      </div>
+
+      <div class="footer_content">
+        <div class="contact_col col_container">
+          <h3>CONTACT</h3>
+          <a href="mailto:mail@mail.csad?Subject=New%20Message">mail@mail.csad</a>
+          <a href="+40747378593">+40747378593</a>
+          <a href="026521345647">026521345647</a>
+        </div>
+        <div class="prod_col col_container">
+          <h3>PRODUSE</h3>
+          <a href="produse#category_0">Spălătorii auto self service</a>
+          <a href="produse#category_1">Aspiratoare</a>
+          <a href="produse#category_2">Structuri metalice</a>
+          <a href="produse#category_3">Accesori</a>
+        </div>
+        <div class="technology_col col_container">
+          <h3>NAVIGARE</h3>
+          <a href="home">Prima pagina</a>
+          <a href="produse">Produse</a>
+          <a href="technologii">Technologii</a>
+          <a href="investitor">Investitor</a>
+          <a href="contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="line_footer"></div>
+      <div class="copyright">Copyright &nbsp<span>&#169</span>&nbsp 2018 all rights reserved.</div>
+
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

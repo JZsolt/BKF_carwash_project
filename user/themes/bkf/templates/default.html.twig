@@ -1,0 +1,131 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  {% set skill_sets = {
+    0: { title: " rentabilitate mare ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/home_page/1_Rentabilitate.png"
+              },
+    1: { title: " competitivitate ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/home_page/2_competitivitate.png"
+              },
+    2: { title: " inovație permanenta ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/home_page/3_Inovatie_permanenta.png"
+                
+              },
+    3: { title: " design personalizat ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/home_page/4_design.png"
+              },
+    4: { title: " echipament premium și robust ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/home_page/5_robust.png"
+              },
+  }
+%}
+
+  {% set circle_skills = {
+    0: { 
+      percentage: "98",
+      nr_text: " 20+ ",
+      title_text: " Ani de experiență. ",
+    },
+    1: { 
+      percentage: "98",
+      nr_text: " 1600+ ",
+      title_text: "Spălătorii construite. ",
+    },
+    2: { 
+      percentage: "98",
+      nr_text: " 20+ ",
+      title_text: " Export în diferite țări. ",
+    },
+    3: { 
+      percentage: "98",
+      nr_text: " 300k+ ",
+      title_text: " Mașini spălate zilni. ",
+    },
+  }
+%}
+
+      <div class="page-content">
+        <section id="slick">
+          <div class="slider slick-slider homopage-slider">
+            <div class="slick-item first">
+              <img src="{{ url('theme://images/Carousel/Carousel_1.jpg') }}" alt="Spalatorie auto BKF" title="Spalatorie auto BKF">
+            </div>
+            <div class="slick-item second">
+              <a class="carusel_btn pozition_btn_1" href="produse" title="Go to Produse">
+                PRODUSE
+              </a>
+              <img class="Carousel_2_desktop" src="{{ url('theme://images/Carousel/Carousel_2.jpg') }}" alt="Spalatorie auto BKF" title="Spalatorie auto BKF">
+              
+              <img class="Carousel_2_mobile" src="{{ url('theme://images/Carousel/Carousel_2_mobile.jpg') }}" alt="Spalatorie auto BKF" title="Spalatorie auto BKF">
+            </div>
+            <div class="slick-item third">
+              <a class="carusel_btn pozition_btn_2" href="technologii" title="Go to Tehnologie">
+                TECHNOLOGI
+              </a>
+              <img src="{{ url('theme://images/Carousel/Carousel_3.jpg') }}" alt="Spalatorie auto BKF" title="Spalatorie auto BKF">
+            </div>
+          </div>
+        </section>
+      <div class="scroll_btn">
+        <img class="scroll_icon_btn" src="{{ url('theme://images/scroll_icon_btn.svg') }}" alt="scroll BKF">
+        <img class="scroll_icon" src="{{ url('theme://images/scroll_icon.svg') }}" alt="scroll BKF">
+        <div class="scroll_text">SCROLL</div>
+      </div>
+      <div class="content_container">
+        <div class="about_container">
+          <h1 class="about_title">
+            Self service BKF Carwash - Spalatorie auto self service
+          </h1>
+          <p class="about_text">
+            BKF este in topul celor mai mari producători de spălătorii auto self service din lume datorită <span><a href="technologii" title="Go to Tecnologie">tehnologiei</a></span>.
+            Realizările sunt create cu pasiune și astfel ne deosebim pe piață.
+          </p>
+        </div>
+
+        <div class="skill_container opacity_null">
+          {% for circle_skill in circle_skills %}
+          <div class=" circlechart circle_skill" id="circle_skill_{{ loop.index }}" data-percentage={{ circle_skill['percentage'] }} data-val={{ circle_skill['nr_text'] }}>
+            <p>{{ circle_skill['title_text'] }}</p>
+          </div>
+          {% endfor %} 
+        </div>
+
+        <div class="description_head_title">
+          <h2>Nevoile investitorilor / clienților noștri sunt satisfăcute prin:</h2>
+        </div>
+        <div class="description_container_main">
+        {% for skill_set in skill_sets %}
+          <div class="description_container">
+            <div class="description_icon">
+              <img src='{{ skill_set['icon']|absolute_url}}' alt="vector BKF spalatorie auto" title="vector BKF spalatorie auto">
+            </div>
+            <div class="description_text_container">
+              <div class="description_title">
+                {{ skill_set['title'] }}
+              </div>
+              <div class="description_text">
+                {{ skill_set['text'] }}
+              </div>
+            </div>
+          </div>
+        {% endfor %} 
+        </div>
+        <div class="description_head_title">
+           <h2>Echipa noastră vă ajută să luați cea mai bună decizie raportată la condițiile Dvs. și să asigurăm sprijin. </h2>
+           
+            <a class="go_contact_btn" href="contact">
+               Nu ezitați să ne contactați! <span>&#x263A;</span>
+            </a>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

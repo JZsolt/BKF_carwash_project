@@ -1,0 +1,147 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+{% set categories = {
+    0: {title: "Spalatorii auto self-service",
+				cat_icon: "./user/themes/bkf/images/Icons/produse/1_cat_img.png",
+				products : {
+			    0: {title: "BKF Carwash Container",
+							text: "Acest tip de instalație este destinată spălării frecvente în orașe medii și mari, aproape de cartiere sau supermarketuri mari. 
+5 Programe de bază sunt cuprinse în instalație: prespălare, spălare, clătire, ceară, clătire finală.
+Diverse programe se pot adăuga, de exemplu: Program cu șampon/spumă activă, program cu perie, program cu spray pentru pneuri, etc.
+Panou de comandă:  
+Calculatorul industrial este de marca B&R Automation cu software BKF Wash cu display LCD touch screen 5.7”.
+Prin panoul de comandă se fac setări pentru: partea financiară, dozajul chimicalelor, iluminare, circuitul de apă anti-îngheț, încălzire în pardoseală etc.
+Apar mesaje și notificări diverse despre starea echipamentului, nivelul produselor chimicale. Informații utile și statistici se pot afișa. Toate acestea se pot vedea și de la distanță prin website sau de pe telefon mobil (Android, IOS) mulțumită aplicației.  
+Alte caracteristici: Sistem de dedurizare a apei și sistem de osmoză, boiler ACV cu dublu funcționalitate, pompe de înaltă presiune BKF CAT 340 D cu regulator, suport din oțel inoxidabil, etc.
+			",
+							icon: "./user/themes/bkf/images/Produse/BKF_Carwash_Container.png",
+						},
+			    1: {title: "BKF Carwash Modul",
+							text: "Acest tip de instalație este destinată spălării frecvente în orașe mai mici și medii, în apropierea magazinelor, cartierelor sau drumului principal. De asemenea, poate fi ideală pentru a completa diverse servicii: a completa o benzinărie, o vulcanizare, etc. BKF Carwash Modul este un sistem complex din oțel inoxidabil bazat pe designul oferit de BKF.
+5 Programe de bază sunt cuprinse în instalație: prespălare, spălare, clătire, ceară, clătire finală.
+Diverse programe se pot adăuga, de exemplu: Program cu șampon/spumă activă, program cu perie, program cu spray pentru pneuri, etc.
+Panou de comandă:  
+Calculatorul industrial este de marca B&R Automation cu software BKF Wash cu display LCD touch screen 5.7”.
+Prin panoul de comandă se fac setări pentru: partea financiară, dozajul chimicalelor, iluminare, circuitul de apă anti-îngheț, încălzire în pardoseală etc.
+Apar mesaje și notificări diverse despre starea echipamentului, nivelul produselor chimicale. Informații utile și statistici se pot afișa. Toate acestea se pot vedea și de la distanță prin website sau de pe telefon mobil (Android, IOS) mulțumită aplicației.  
+Este un sistem cu tehnică modernă de spălare cu izolație fonică și sistem anti-îngheț .
+Alte caracteristicii: Sistem de dedurizare a apei și sistem de osmoză, boiler ACV, pompe de înaltă presiune BKF CAT 340 D cu regulator, suport din oțel inoxidabil.
+",
+							icon: "./user/themes/bkf/images/Produse/BKF_Carwash_Modul.png",
+						},
+					2: {title: "BKF Mono",
+							text: "Este un sistem de spălat profesional cu 4 programe pentru o singură pistă.	
+Se folosește un sistem simplificat pentru tratarea apei. Functionează cu apă rece, optional și cu  apă caldă.
+	Îndepărteză murdăria și nu este nevoie de uscare.
+	Are dimensiuni mici.
+	Toate funcțiile sunt coordonate de un controler industrial Moeller.",
+							icon: "./user/themes/bkf/images/Produse/MultiWash.png",
+						},
+					3: {title: "HCM:",
+							text: "HCM este un sistem de spălat profesional cu 5 programe
+				Se foloseste un sistem simplificat pentru tratarea apei.
+				Îndepărtarea murdaria si parafinul.
+				Nu va zgaria vopseaua, nu este nevoie de uscare.
+				Are marimi mici.
+				Toate funcțiile sunt controlate de un controler industrial Moeller.",
+							icon: "./user/themes/bkf/images/Produse/HCM.png",
+						},
+					}
+			},
+
+		1: {title: "Aspiratoare",
+				cat_icon: "./user/themes/bkf/images/Icons/produse/2_cat_img.png",
+				products: {
+					0: {title: "Aspirator BFK ",
+						text: "Este o instalație de autoservire, se introduce un jeton sau numerar și se pornește aspiratorul. Se poate alege dintre cele două tipuri: aspiratorul care deservește una sau două mașini în același timp. Opțional se poate adăuga funcționalitate de compresor. Ambele versiuni sunt disponibile într-o carcasă din oțel inoxidabil.",
+						icon: "./user/themes/bkf/images/Produse/aspirator.png",
+					},
+				}
+			},
+
+		2: {title: "Structuri metalice",
+				cat_icon: "./user/themes/bkf/images/Icons/produse/3_cat_img.png",
+				products: {
+					0: {	title: "Futuro",
+								text: "Futuro",
+								icon: "./user/themes/bkf/images/Produse/Futuro.png",
+					},
+					1: {	title: "Pro",
+								text: "Pro",
+								icon: "./user/themes/bkf/images/Produse/Pro.png",
+					},
+					2: {	title: "Standard",
+								text: "Standard",
+								icon: "./user/themes/bkf/images/Produse/Standard.png",
+					},
+				}
+			},
+
+		3: {title: "Accesori",
+				cat_icon: "./user/themes/bkf/images/Icons/produse/4_cat_img.png",
+				products: {
+					0: {	title: "Automat de schimbat bani (BKF Coin Change Machine)",
+								text: "Este o parte esențială la o spălătorie auto. Se poate configure în multe moduri.
+	Functionalități pe care le poate avea:
+		Schimbă numerarul sau banii de pe card bancar în jetoane.
+		Se poate cumpăra și încărca cardul de fidelitate.
+		Plata pentru spălare se poate efectua și aici.
+	    Schimbă bancnotele mari în banknote mici.",
+								icon: "./user/themes/bkf/images/Produse/accesorii.png",
+					}
+				}
+			},
+	}
+%}
+<div class="page-content">
+
+	<div class="categories_row">
+		{% set index = 0 %}
+			{% for category in categories %}
+				<a href="#category_{{index }}" class="categories_box js_nav_scroll">
+					<div class="categorie_box_img">
+						<img src="{{ category['cat_icon'] }}">
+					</div>
+					<div class="categories_title">{{ category['title'] }}</div>
+				</a>
+		{% set index = index + 1 %}
+		{% endfor %}
+	</div>
+  <div class="scroll_btn">
+    <img class="scroll_icon_btn" src="{{ url('theme://images/scroll_icon_btn.svg') }}" alt="_BKF">
+        <img class="scroll_icon" src="{{ url('theme://images/scroll_icon.svg') }}" alt="_BKF">
+    <div class="scroll_text">SCROLL</div>
+  </div>
+			{% set index = 0 %}
+		{% for category in categories %}
+			<div class="category_container section" id="category_{{index}}" >
+				<div class="category_box">
+					<div class="category_icon">
+						<img src="{{ category['cat_icon'] }}" alt="">
+					</div>
+					<div class="category_title">
+						<h3>{{ category['title'] }} </h3>
+					</div>
+				</div>
+				{% for product in category.products %}
+					<div class="product-details">
+							<div class="product-details-img-content">
+								<img src="{{ product['icon'] }}" alt="{{ product['title'] }}">
+							</div>
+						<div class="product-text">
+							<h4 class="product-title">
+								{{ product['title'] }}
+							</h4>
+							{{ product['text'] }}
+						</div>
+					</div>
+
+				{% endfor %}
+				{% set index = index + 1 %}
+			</div>
+		
+		{% endfor %}
+</div>
+{% endblock %}

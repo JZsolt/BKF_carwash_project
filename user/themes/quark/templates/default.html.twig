@@ -1,0 +1,129 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  {% set skill_sets = {
+    0: { title: " rentabilitate mare ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/Rentabilitate.png"
+              },
+    1: { title: " competitivitate ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/competitivitate.png"
+              },
+    2: { title: " inovație permanenta ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/Inovatie_permanenta.png"
+              },
+    3: { title: " design personalizat ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/design.png"
+              },
+    4: { title: " echipament premium și robust ",
+                text: " ",
+                icon: "./user/themes/bkf/images/Icons/robust.png"
+              },
+    
+  }
+%}
+
+  {% set circle_skills = {
+    0: { 
+      percentage: "70",
+      nr_text: " 20+ ",
+      title_text: " Years of experience. ",
+    },
+    1: { 
+      percentage: "97",
+      nr_text: " 16+ ",
+      title_text: " Years of experience. ",
+    },
+    2: { 
+      percentage: "85",
+      nr_text: " 20+ ",
+      title_text: " Export countries. ",
+    },
+    3: { 
+      percentage: "98",
+      nr_text: " 300k+ ",
+      title_text: " Cars washed daily. ",
+    },
+  }
+%}
+
+      <div class="page-content">
+        <section id="slick">
+          <div class="slider slick-slider homopage-slider">
+            <div class="slick-item first">
+              <img src="{{ url('theme://images/Carousel/Carousel_1.png') }}" alt="_BKF">
+            </div>
+            <div class="slick-item second">
+              <a class="carusel_btn pozition_btn_1" href="produse.php">
+                PRODUSE
+              </a>
+              <img src="{{ url('theme://images/Carousel/Carousel_2.png') }}" alt="_BKF">
+            </div>
+            <div class="slick-item third">
+              <a class="carusel_btn pozition_btn_2" href="{{technologii.url}}">
+                TECHNOLOGI
+              </a>
+              <img src="{{ url('theme://images/Carousel/Carousel_3.png') }}" alt="_BKF">
+            </div>
+          </div>
+        </section>
+      <div class="scroll_btn">
+        <img class="scroll_icon_btn" src="{{ url('theme://images/scroll_icon_btn.svg') }}" alt="_BKF">
+        <img class="scroll_icon" src="{{ url('theme://images/scroll_icon.svg') }}" alt="_BKF">
+        <div class="scroll_text">SCROLL</div>
+      </div>
+      <div class="content_container">
+        <div class="about_container">
+          <h1 class="about_title">
+            Self-service BKF Carwash
+          </h1>
+          <div class="about_text">
+            BKF este in topul celor mai mari producători de spălătorii auto self service din lume datorită <span>tehnologiei</span>.
+            Realizările sunt create cu pasiune și astfel ne deosebim pe piață.
+          </div>
+        </div>
+
+        <div class="skill_container opacity_null">
+          {% for circle_skill in circle_skills %}
+          <div class=" circlechart circle_skill" id="circle_skill_{{ loop.index }}" data-percentage={{ circle_skill['percentage'] }} data-val={{ circle_skill['nr_text'] }}>
+            <p>{{ circle_skill['title_text'] }}</p>
+          </div>
+          {% endfor %} 
+        </div>
+
+        <div class="description_head_title">
+          <h3>Nevoile investitorilor / clienților noștri sunt satisfăcute prin:</h3>
+        </div>
+        <div class="description_container_main">
+        {% for skill_set in skill_sets %}
+          <div class="description_container">
+            <div class="description_icon">
+              <img src='{{ skill_set['icon']|absolute_url}}'>
+            </div>
+            <div class="description_text_container">
+              <div class="description_title">
+                {{ skill_set['title'] }}
+              </div>
+              <div class="description_text">
+                {{ skill_set['text'] }}
+              </div>
+            </div>
+          </div>
+        {% endfor %} 
+        </div>
+        <div class="description_head_title">
+           <h3>Echipa noastră vă ajută să luați cea mai bună decizie raportată la condițiile Dvs. și să asigurăm sprijin. </h3>
+           
+            <a class="go_contact_btn" href="contact">
+               Nu ezitați să ne contactați! <span>&#x263A;</span>
+            </a>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

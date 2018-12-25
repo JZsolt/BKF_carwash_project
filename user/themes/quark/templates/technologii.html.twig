@@ -1,0 +1,99 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+{% set technologies = {
+    0: {title: "Prespălare",
+				text: "Înmuiere și pre-curățare a murdăriei cu apă filtrată și dedurizată.
+								Se spală de sus în jos.",
+				icon: "./user/themes/bkf/images/Icons/technologii/prog1_icon.png"
+			},
+    1: {title: "Spălare cu pressiune",
+				text: "Spălare cu apă caldă și spumă active pentru a indepărta murdăria rezistentă, înlătură insectele (distanță recomandată 5-7 cm) de pe caroserie.",
+				icon: "./user/themes/bkf/images/Icons/technologii/prog2_icon.png"
+			},
+		2: {title: "Clătire:",
+				text: "Înlătură/îndepărteză resturile de soluţii(spuma, şamponul) cu apă curată sub pressiune și purifică mașina.",
+				icon: "./user/themes/bkf/images/Icons/technologii/prog3_icon.png"
+			},
+		3: {title: "Ceară:",
+				text: "Apă caldă dedurizată cu ceară pentru protejarea luciului şi lacului de pe caroserie. Utilizarea acestui program protejează exteriorul mașini de murdăriile rezistente în condiții meteorologice nefavorabile.",
+				icon: "./user/themes/bkf/images/Icons/technologii/prog4_icon.png"
+			},
+		4: {title: "Clătire finală:",
+				text: "Spălare cu apă demineralizată pentru uscare fără pete. Rezultatul este eficient pentru că vehiculul Dvs. va străluci fără pete.",
+				icon: "./user/themes/bkf/images/Icons/technologii/prog5_icon.png"
+			},
+		5: {title: "Spălare cu perie:",
+				text: "Spălare de bază cu spumă activă.",
+				icon: "./user/themes/bkf/images/Icons/home_page/3_partner_icon.png"
+			},
+		6: {title: "Șampon active:",
+				text: "Spălare cu șampon/spumă active( tip friscă ) in diferite culori la presiune scăzută. Masina va fi acoperită cu un strat de spuma groasă. ",
+				icon: "./user/themes/bkf/images/Icons/home_page/3_partner_icon.png"
+			},
+	}
+%}
+
+{%	set elipse_icons = {
+    0: {title: "Plata cu Card bancar",
+				text: "BKF face posibil sa se faca plata si cu card bancar(Visa sau Mastercard). Plata fără numerar este viitorul, ceace inseamna un plus pe piața. Se castiga clienti care prefera cardul bancar.",
+				icon: "./user/themes/bkf/images/Icons/home_page/1_Pay_icon.png"
+			},
+    1: {title: "Card de loialitate",
+				text: "Este o soluție excelentă pentru a castiga clienti, adica companii care au mașini de serviciu. Puteți avea clienți noi datorită cardurilor de loialitate! Cardul BKF se poate cumpara foarte repede si usor. Ulterior se poate reincarca si propiretarul poate monitoriza tranzactile.",
+				icon: "./user/themes/bkf/images/Icons/home_page/2_Card_icon.png"
+			},
+		2: {title: "Administrarea spalatoriei prin Internet",
+				text: "ÎProprietarul spalatoriei poate configura setarile si poate primi notificari prin internet. Este posibil multumita sistemului inteligent de gestionare a spălătoriei care ajuta sa vă economisiti timpul pretios, pentru ca de mai putine ori trebuie sa treceti pe la spalatorie.",
+				icon: "./user/themes/bkf/images/Icons/home_page/3_cloud_icon.png"
+			},
+		3: {title: "Aplicatia mobil/tableta (Android, IOS)",
+				text: "Prin aplicatie se poate vedea cifra de afaceri, tranzactile si notificarile in legatura cu spalatoria auto.",
+				icon: "./user/themes/bkf/images/Icons/home_page/4_gear_icon.png"
+			},
+		}
+  
+%}
+
+<div class="page-content">
+	<section class="technologies">
+
+		<div class="section_banner">
+		<img src="{{ url('theme://images/Carousel/Carousel_1.png') }}">
+		<div class="section_subtitle">
+			<h2>Unique washing technology</h2>
+			<h4>
+				În permanență lucrăm la dezvoltarea dispozitivelor noastre. În fiecare an introducem modele noi cu îmbunătățiri. Suntem precursorii multor soluții la capitolul spălătorii auto.
+			</h4>
+		</div>
+	</div>
+
+	<div class="circle_container" data-aos="fade-up">
+    {% for elipse_icon in elipse_icons %}
+    <div class="circle">
+      <div class="circle_icon">
+        <img src="{{ elipse_icon['icon'] }}" >
+        <p>{{elipse_icon['title']}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+	<div class="section_content">
+		{% for technology in technologies %}
+		<div class="technologies_box">
+			<div class="technology_icon">
+				<img src="{{ technology['icon'] }}"/>
+			</div>
+			<div class="technology_text">
+				<h3>{{ technology['title'] }}</h3>
+				<div>{{ technology['text'] }}</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	</section>
+</div>
+
+{% endblock %}
